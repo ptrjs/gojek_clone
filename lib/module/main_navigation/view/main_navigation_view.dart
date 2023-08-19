@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gojek_clone/core.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import '../controller/main_navigation_controller.dart';
 
 class MainNavigationView extends StatefulWidget {
   const MainNavigationView({Key? key}) : super(key: key);
@@ -16,7 +15,7 @@ class MainNavigationView extends StatefulWidget {
         body: IndexedStack(
           index: controller.selectedIndex,
           children: [
-            HomeView(),
+            const HomeView(),
             Container(
               color: Colors.green,
             ),
@@ -33,7 +32,7 @@ class MainNavigationView extends StatefulWidget {
           onTap: (newIndex) => controller.updateIndex(newIndex),
           type: BottomNavigationBarType.fixed,
           items: [
-            BottomNavigationBarItem(
+            const BottomNavigationBarItem(
               icon: Icon(
                 Icons.home,
               ),
@@ -45,13 +44,13 @@ class MainNavigationView extends StatefulWidget {
               ),
               label: "Promo",
             ),
-            BottomNavigationBarItem(
+            const BottomNavigationBarItem(
               icon: Icon(
                 Icons.delivery_dining,
               ),
               label: "Order",
             ),
-            BottomNavigationBarItem(
+            const BottomNavigationBarItem(
               icon: Icon(
                 Icons.chat,
               ),

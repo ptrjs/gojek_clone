@@ -1,8 +1,10 @@
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:gojek_clone/module/home/widget/listtile_gopay.dart';
+import 'package:gojek_clone/module/home/widget/listtile_gopay_cash.dart';
 import 'package:gojek_clone/shared/theme/theme_config.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:gojek_clone/core.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import '../controller/home_controller.dart';
 
 class HomeView extends StatefulWidget {
@@ -10,7 +12,13 @@ class HomeView extends StatefulWidget {
 
   Widget build(context, HomeController controller) {
     controller.view = this;
-    final TextEditingController _searchController = TextEditingController();
+
+    final ScrollController scrollController = ScrollController();
+
+    double getScrollOffset() {
+      return scrollController.offset;
+    }
+
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -68,13 +76,13 @@ class HomeView extends StatefulWidget {
               child: Container(
                 width: 40,
                 height: 40,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.white,
+                ),
                 child: Icon(
                   MdiIcons.account,
                   size: 24.0,
-                ),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.white,
                 ),
               ),
             ),
@@ -84,185 +92,162 @@ class HomeView extends StatefulWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              height: 100,
-              width: MediaQuery.of(context).size.width,
-              decoration: const BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Row(
-                children: [
-                  Container(
-                    height: 100,
-                    width: 150,
-                    color: Colors.grey[300],
-                    child: ListView.builder(
-                      scrollDirection: Axis.vertical,
-                      itemCount: 2,
-                      itemBuilder: (context, index) {
-                        if (index == 0) {
-                          return Container(
-                            child: ListTile(
-                              title: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    child: Column(
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.fromLTRB(
-                                              8, 0, 0, 0),
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            children: [
-                                              const Icon(
-                                                Icons.monetization_on,
-                                                size: 14.0,
-                                              ),
-                                              const SizedBox(
-                                                width: 4.0,
-                                              ),
-                                              Text(
-                                                "gopay",
-                                                style: TextStyle(
-                                                  fontSize: 12.0,
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                              ),
-                                              const SizedBox(
-                                                width: 4.0,
-                                              ),
-                                              Text(
-                                                "coins",
-                                                style: TextStyle(
-                                                  fontSize: 12.0,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          height: 4.0,
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.fromLTRB(
-                                              8, 0, 0, 0),
-                                          child: Text(
-                                            "0",
-                                            style: TextStyle(
-                                              fontSize: 14.0,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          height: 4.0,
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.fromLTRB(
-                                              8, 0, 0, 0),
-                                          child: Text(
-                                            "Click for details",
-                                            style: TextStyle(
-                                                fontSize: 12.0,
-                                                color: primaryColor),
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          height: 4.0,
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          );
-                        } else if (index == 1) {
-                          return Container(
-                            child: ListTile(
-                              title: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    child: Column(
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.fromLTRB(
-                                              8, 0, 0, 0),
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            children: [
-                                              const Icon(
-                                                Icons.monetization_on,
-                                                size: 14.0,
-                                              ),
-                                              const SizedBox(
-                                                width: 4.0,
-                                              ),
-                                              Text(
-                                                "gopay",
-                                                style: TextStyle(
-                                                  fontSize: 12.0,
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                              ),
-                                              const SizedBox(
-                                                width: 4.0,
-                                              ),
-                                              Text(
-                                                "coins",
-                                                style: TextStyle(
-                                                  fontSize: 12.0,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          height: 4.0,
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.fromLTRB(
-                                              8, 0, 0, 0),
-                                          child: Text(
-                                            "0",
-                                            style: TextStyle(
-                                              fontSize: 14.0,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          height: 4.0,
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.fromLTRB(
-                                              8, 0, 0, 0),
-                                          child: Text(
-                                            "sdadsaasds",
-                                            style: TextStyle(
-                                                fontSize: 12.0,
-                                                color: primaryColor),
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          height: 4.0,
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          );
-                        }
-                      },
-                    ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
+              child: Container(
+                height: 100,
+                width: MediaQuery.of(context).size.width,
+                decoration: const BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(12.0),
                   ),
-                ],
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+                  child: Row(
+                    children: [
+                      // Padding(
+                      //   padding: const EdgeInsets.all(8.0),
+                      //   child: Column(
+                      //     crossAxisAlignment: CrossAxisAlignment.center,
+                      //     mainAxisAlignment: MainAxisAlignment.center,
+                      //     children: [
+                      //       Container(
+                      //         height: 15,
+                      //         width: 5,
+                      //         decoration: BoxDecoration(
+                      //             borderRadius: BorderRadius.all(
+                      //               Radius.circular(12.0),
+                      //             ),
+
+                      //             shape: BoxShape.rectangle),
+                      //       ),
+                      //       const SizedBox(
+                      //         height: 4.0,
+                      //       ),
+                      //       Container(
+                      //         height: 15,
+                      //         width: 5,
+                      //         decoration: BoxDecoration(
+                      //             borderRadius: BorderRadius.all(
+                      //               Radius.circular(12.0),
+                      //             ),
+                      //             shape: BoxShape.rectangle),
+                      //       ),
+                      //     ],
+                      //   ),
+                      // ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          height: 100,
+                          width: 150,
+                          child: ListView.builder(
+                            controller: ScrollController(),
+                            scrollDirection: Axis.vertical,
+                            itemCount: 3,
+                            itemBuilder: (context, index) {
+                              controller.setScrollOffset(index);
+                              if (index == 0) {
+                                return ListTileGopayCash();
+                              } else if (index == 1) {
+                                return Container(
+                                  height: 10,
+                                  width: 100,
+                                  decoration: BoxDecoration(
+                                    color: Colors.blue,
+                                  ),
+                                );
+                              } else if (index == 2) {
+                                return ListTileGopay();
+                              }
+                              return null;
+                            },
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 8.0,
+                      ),
+                      Expanded(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            IconButton(
+                              onPressed: () {},
+                              icon: const Icon(
+                                Icons.payment,
+                                size: 24.0,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "Pay",
+                              style: TextStyle(
+                                fontSize: 12.0,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 8.0,
+                      ),
+                      Expanded(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            IconButton(
+                              onPressed: () {},
+                              icon: const Icon(
+                                Icons.add_box,
+                                size: 24.0,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "Top Up",
+                              style: TextStyle(
+                                fontSize: 12.0,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 8.0,
+                      ),
+                      Expanded(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            IconButton(
+                              onPressed: () {},
+                              icon: const Icon(
+                                Icons.rocket_launch,
+                                size: 24.0,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "Explore",
+                              style: TextStyle(
+                                fontSize: 12.0,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
           ],

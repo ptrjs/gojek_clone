@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:gojek_clone/core.dart';
 import '../view/home_view.dart';
@@ -17,4 +18,9 @@ class HomeController extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
+
+  int scrollIndex = 0;
+  void setScrollOffset(int index) {
+    scrollIndex = index;
+  }
 }
