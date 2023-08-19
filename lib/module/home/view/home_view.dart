@@ -1,4 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:gojek_clone/module/home/widget/carousel_gojek.dart';
+import 'package:gojek_clone/module/home/widget/container_image_gojek.dart';
 import 'package:gojek_clone/module/home/widget/listtile_gopay.dart';
 import 'package:gojek_clone/module/home/widget/listtile_gopay_cash.dart';
 import 'package:gojek_clone/module/home/widget/menu_gojek.dart';
@@ -253,6 +255,74 @@ class HomeView extends StatefulWidget {
               ),
             ),
             MenuGojek(),
+            ContainerImageGojek(
+              imageUrl:
+                  "https://media.istockphoto.com/id/1287632111/photo/weve-got-you-covered-during-lockdown.webp?b=1&s=170667a&w=0&k=20&c=0Tze_P5Sb1nup5F-XFi3qgDqilYz2EzaUE_qZexcJkg=",
+              title: "Ready for win the prize?",
+              desc:
+                  "Always order Gojek for win the chance to get car & many more. Check the information!",
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.monetization_on,
+                        size: 18.0,
+                        color: secondaryColor,
+                      ),
+                      const SizedBox(
+                        width: 4.0,
+                      ),
+                      Text(
+                        "gopay",
+                        style: TextStyle(
+                          fontSize: 12.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 8.0,
+                  ),
+                  Text(
+                    "Payouts can cashback everywhere??",
+                    style: TextStyle(
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 4.0,
+                  ),
+                  Text(
+                    "Only Rp 1! Buy a Cashback Package, pay QRIS or not all out! Check it now!",
+                    style: TextStyle(
+                      fontSize: 12.0,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 8.0,
+                  ),
+                ],
+              ),
+            ),
+
+            //con image
+            CarouselGojek(),
+            const SizedBox(
+              height: 8.0,
+            ),
+            ContainerImageGojek(
+                imageUrl:
+                    "https://media.istockphoto.com/id/1182778655/id/foto/pengantar-barang-memegang-kotak-parsel-dan-membunyikan-bel-pintu-di-pintu-klien-di-latar.jpg?s=612x612&w=0&k=20&c=1B3h2bBD5bOP53Fr3hkAYhefZpjTb7Q4Ly5pNYNIYmA=",
+                title: "Discount if ride GoCar",
+                desc:
+                    "Only for you who want comfortable ride but cost less. Click!")
           ],
         ),
       ),
