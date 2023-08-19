@@ -205,7 +205,7 @@ class HomeView extends StatefulWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             IconButton(
-                              onPressed: () {},
+                              onPressed: () => Get.to(TopUpView()),
                               icon: const Icon(
                                 Icons.add_box,
                                 size: 24.0,
