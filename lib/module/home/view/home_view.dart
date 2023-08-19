@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:gojek_clone/module/home/widget/listtile_gopay.dart';
 import 'package:gojek_clone/module/home/widget/listtile_gopay_cash.dart';
+import 'package:gojek_clone/module/home/widget/menu_gojek.dart';
 import 'package:gojek_clone/shared/theme/theme_config.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:flutter/material.dart';
@@ -91,6 +92,7 @@ class HomeView extends StatefulWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
               padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
@@ -250,6 +252,7 @@ class HomeView extends StatefulWidget {
                 ),
               ),
             ),
+            MenuGojek(),
           ],
         ),
       ),
