@@ -32,14 +32,14 @@ class _OtherMethodCardState extends State<OtherMethodCard> {
         ),
         title: Text(
           widget.title,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.bold,
           ),
         ),
         subtitle: Text(
           widget.desc,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 12,
           ),
         ),

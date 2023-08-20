@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../shared/theme/theme_config.dart';
 
 class ListTileGopay extends StatefulWidget {
   const ListTileGopay({Key? key}) : super(key: key);
@@ -19,14 +18,14 @@ class _ListTileGopayState extends State<ListTileGopay> {
         borderRadius: BorderRadius.circular(10),
         color: Colors.white,
       ),
-      child: ListTile(
+      child: const ListTile(
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Padding(
+                Padding(
                   padding: EdgeInsets.fromLTRB(8, 0, 0, 0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -41,20 +40,20 @@ class _ListTileGopayState extends State<ListTileGopay> {
                     ],
                   ),
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 4.0,
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 4.0,
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(8, 0, 0, 0),
+                  padding: EdgeInsets.fromLTRB(8, 0, 0, 0),
                   child: Text(
                     "Pay with GoPay",
                     style: TextStyle(fontSize: 12.0, color: Colors.grey),
                   ),
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 4.0,
                 ),
               ],

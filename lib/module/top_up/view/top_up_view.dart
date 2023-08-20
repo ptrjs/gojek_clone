@@ -19,7 +19,7 @@ class TopUpView extends StatefulWidget {
           backgroundColor: Colors.white,
           bottom: TabBar(
             indicatorColor: primaryColor,
-            tabs: [
+            tabs: const [
               Tab(
                 text: "Instant",
               ),
@@ -37,7 +37,7 @@ class TopUpView extends StatefulWidget {
             ),
           ),
         ),
-        body: TabBarView(
+        body: const TabBarView(
           children: [
             InstantView(),
             OtherMethodView(),

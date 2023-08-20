@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:gojek_clone/module/top_up/widget/other_method_card.dart';
-import 'package:gojek_clone/shared/theme/theme_config.dart';
 
 class OtherMethodView extends StatelessWidget {
   const OtherMethodView({Key? key}) : super(key: key);
@@ -12,7 +11,7 @@ class OtherMethodView extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          child: Column(
+          child: const Column(
             children: [
               OtherMethodCard(
                   iconUrl:

@@ -26,7 +26,7 @@ class _ContainerImageGojekState extends State<ContainerImageGojek> {
         height: 240.0,
         decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.all(
+            borderRadius: const BorderRadius.all(
               Radius.circular(
                 8.0,
               ),
@@ -36,14 +36,14 @@ class _ContainerImageGojekState extends State<ContainerImageGojek> {
                 color: Colors.grey.withOpacity(0.5),
                 spreadRadius: 2,
                 blurRadius: 5,
-                offset: Offset(0, 3),
+                offset: const Offset(0, 3),
               )
             ]),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(8),
                   topRight: Radius.circular(8),
                   bottomLeft: Radius.zero,
@@ -66,7 +66,7 @@ class _ContainerImageGojekState extends State<ContainerImageGojek> {
                   children: [
                     Text(
                       widget.title,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 14.0,
                         fontWeight: FontWeight.bold,
                       ),
@@ -76,7 +76,7 @@ class _ContainerImageGojekState extends State<ContainerImageGojek> {
                     ),
                     Text(
                       widget.desc,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 12.0,
                         color: Colors.black,
                       ),
